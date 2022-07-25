@@ -13,6 +13,7 @@
 # IDEA files
 .idea/
 target/
+*.iml
 
 # Package Files #
 *.jar
