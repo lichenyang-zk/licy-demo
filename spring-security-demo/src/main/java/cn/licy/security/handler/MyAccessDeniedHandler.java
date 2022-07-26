@@ -26,5 +26,7 @@ public class MyAccessDeniedHandler implements AccessDeniedHandler {
         httpServletResponse.setHeader("Content-Type","application/json;charset=utf-8");
         PrintWriter writer = httpServletResponse.getWriter();
         writer.write("{\"status\":\"error\",\"msg\":\"权限不足，返回\"}");
+        writer.flush();
+        writer.close();
     }
 }

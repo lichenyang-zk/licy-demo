@@ -1,5 +1,6 @@
 package cn.licy.security.controller;
 
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,6 +25,7 @@ public class SecurityController {
     //     return "redirect:main.html";
     // }
 
+    @Secured("ROLE_abc") // 角色权限判断
     @RequestMapping("/toMain")
     public String main() {
         return "redirect:main.html";

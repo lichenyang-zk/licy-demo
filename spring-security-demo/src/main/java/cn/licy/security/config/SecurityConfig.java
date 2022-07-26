@@ -36,18 +36,20 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 // 必须和表单提交的接口保持一致，才会去执行自定义登录逻辑
                 .loginProcessingUrl("/login")
                 // 登录成功后跳转的页面，POST请求
-                // .successForwardUrl("/toMain")
+                .successForwardUrl("/toMain")
                 // 自定义登录成功处理器
-                .successHandler(new MyAuthenticationSuccessHandler())
+                // .successHandler(new MyAuthenticationSuccessHandler())
                 // 登录失败后跳转的页面
-                // .failureForwardUrl("/toError")
+                .failureForwardUrl("/toError");
                 // 自定义登录失败处理器
-                .failureHandler(new MyAuthenticationFailureHandler());
+                // .failureHandler(new MyAuthenticationFailureHandler());
 
         // 授权
         http.authorizeRequests()
                 // 放行login.html，不需要认证
                 .antMatchers("/login.html").permitAll()
+                // 放行login.html，不需要认证，access方式
+                // .antMatchers("/login.html").access("permitAll")
                 // 放行error.html，不需要认证
                 .antMatchers("/error.html").permitAll()
                 // 放行所有静态资源
@@ -69,9 +71,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 // .antMatchers("/security.html").hasRole("Admin")
                 // .antMatchers("/security.html").hasAnyRole("admin", "Admin")
                 // 基于IP控制
-                .antMatchers("/security.html").hasIpAddress("127.0.0.1")
+                // .antMatchers("/security.html").hasIpAddress("127.0.0.1")
+                // 基于IP控制，，access方式
+                // .antMatchers("/security.html").access("hasIpAddress('127.0.0.1')")
+                // 自定义权限控制
+                // .anyRequest().access("@myServiceImpl.hasPermission(request, authentication)");
                 // 除上面放行的之外，所有的请求都必须认证才能访问
                 .anyRequest().authenticated();
+
 
         // 自定义异常处理器
         http.exceptionHandling()
