@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 /**
- * 403自定义处理器
+ * 自定义异常处理器
  *
  * @author lichenyang
  * @since 2022/7/22 18:18
