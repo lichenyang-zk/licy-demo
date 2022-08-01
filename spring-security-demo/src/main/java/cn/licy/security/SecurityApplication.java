@@ -6,9 +6,12 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 
 /**
  * 启动类
+ * 开启注解权限控制：
+ * securedEnabled = true
+ * prePostEnabled = true
  */
 @SpringBootApplication
-@EnableGlobalMethodSecurity(securedEnabled = true) // 开启注解权限控制
+@EnableGlobalMethodSecurity(securedEnabled = true, prePostEnabled = true)
 public class SecurityApplication {
     public static void main(String[] args) {
         SpringApplication.run(SecurityApplication.class, args);
