@@ -41,7 +41,7 @@ public class SecurityController {
     }
 
     @GetMapping("/demo")
-    @ResponseBody
+    // @ResponseBody
     public String demo(){
         return "demo";
     }

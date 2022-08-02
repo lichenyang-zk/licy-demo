@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+    <meta charset="UTF-8">
+    <title>thymeleaf权限控制（了解）</title>
+</head>
+<body>
+<table border="1">
+    <tr>
+        <td>登录 账号：</td>
+        <td><span sec:authentication="name"></span></td>
+    </tr>
+    <tr>
+        <td>登录 账号：</td>
+        <td><span sec:authentication="principal.username"></span></td>
+    </tr>
+    <tr>
+        <td>凭   证：</td>
+        <td><span sec:authentication="credentials"></span></td>
+    </tr>
+    <tr>
+        <td>权限和角色：</td>
+        <td><span sec:authentication="authorities"></span></td>
+    </tr>
+    <tr>
+        <td>客户端地址：</td>
+        <td><span sec:authentication="details.remoteAddress"></span></td>
+    </tr>
+    <tr>
+        <td>&nbsp;&nbsp;sessionId：</td>
+        <td><span sec:authentication="details.sessionId"></span></td>
+    </tr>
+</table>
+<h3>通过权限判断：</h3>
+<button sec:authorize="hasAuthority('/insert')">新增</button>
+<button sec:authorize="hasAuthority('/delete')">删除</button>
+<button sec:authorize="hasAuthority('/update')">修改</button>
+<button sec:authorize="hasAuthority('/select')">查看</button>
+<br />
+<h3>通过角色判断：</h3>
+<button sec:authorize="hasRole('abc')">新增</button>
+<button sec:authorize="hasRole('abc')">删除</button>
+<button sec:authorize="hasRole('abc')">修改</button>
+<button sec:authorize="hasRole('abc')">查看</button>
+</body>
+</html>

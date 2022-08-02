@@ -1,12 +1,12 @@
 package cn.licy.security.config;
 
 import cn.licy.security.handler.MyAccessDeniedHandler;
-import cn.licy.security.handler.MyAuthenticationFailureHandler;
-import cn.licy.security.handler.MyAuthenticationSuccessHandler;
+import cn.licy.security.service.impl.UserDetailsServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.rememberme.JdbcTokenRepositoryImpl;
@@ -27,16 +27,24 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Resource
     private DataSource dataSource;
 
+    @Resource
+    private UserDetailsServiceImpl userDetailsService;
+
+    @Resource
+    private PersistentTokenRepository persistentTokenRepository;
+
     @Bean
     public PasswordEncoder getPasswordEncoding() {
         return new BCryptPasswordEncoder();
     }
 
     @Bean
-    public PersistentTokenRepository persistentTokenRepository(){
+    public PersistentTokenRepository getPersistentTokenRepository() {
         JdbcTokenRepositoryImpl jdbcTokenRepository = new JdbcTokenRepositoryImpl();
         // 设置数据源
         jdbcTokenRepository.setDataSource(dataSource);
+        // 自定建表，第一次启动建表，然后注释掉
+        // jdbcTokenRepository.setCreateTableOnStartup(true);
 
         return jdbcTokenRepository;
     }
@@ -58,8 +66,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 // .successHandler(new MyAuthenticationSuccessHandler())
                 // 登录失败后跳转的页面
                 .failureForwardUrl("/toError");
-                // 自定义登录失败处理器
-                // .failureHandler(new MyAuthenticationFailureHandler());
+        // 自定义登录失败处理器
+        // .failureHandler(new MyAuthenticationFailureHandler());
 
         // 授权
         http.authorizeRequests()
@@ -100,6 +108,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         // 自定义异常处理器
         http.exceptionHandling()
                 .accessDeniedHandler(new MyAccessDeniedHandler());
+
+        // 记住我
+        http.rememberMe()
+                .tokenRepository(persistentTokenRepository)
+                // 自定义参数名，默认为remember-me
+                // .rememberMeParameter("")
+                // 超时时间，默认两周，暂设置60秒
+                .tokenValiditySeconds(60)
+                // 自定义登录逻辑
+                .userDetailsService(userDetailsService);
 
         // 关闭csrf防护
         http.csrf().disable();

@@ -11,6 +11,7 @@
     <modules>
         <module>boot-demo</module>
         <module>spring-security-demo</module>
+        <module>spring-security-oauth2-demo</module>
     </modules>
 
     <properties>
@@ -26,6 +27,7 @@
         <commons-collections4.version>4.4</commons-collections4.version>
         <mybatis.version>2.2.2</mybatis.version>
         <mysql.version>8.0.30</mysql.version>
+        <thymeleaf-extras.version>3.1.0.M1</thymeleaf-extras.version>
     </properties>
 
     <dependencyManagement>
