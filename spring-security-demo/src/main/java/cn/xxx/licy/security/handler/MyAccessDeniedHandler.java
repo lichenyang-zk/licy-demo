@@ -1,4 +1,4 @@
-package cn.licy.security.handler;
+package cn.xxx.licy.security.handler;
 
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.web.access.AccessDeniedHandler;

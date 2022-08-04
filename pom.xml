@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>cn.licy</groupId>
+    <groupId>cn.xxx.licy</groupId>
     <artifactId>licy-demo</artifactId>
     <packaging>pom</packaging>
     <version>1.0.0-SNAPSHOT</version>
@@ -22,6 +22,8 @@
 
         <spring-boot.version>2.3.12.RELEASE</spring-boot.version>
         <spring-cloud.version>Hoxton.SR12</spring-cloud.version>
+        <spring-cloud-oauth2.version>2.2.5.RELEASE</spring-cloud-oauth2.version>
+        <spring-cloud-security.version>2.2.5.RELEASE</spring-cloud-security.version>
         <lombok.version>1.18.24</lombok.version>
         <commons-lang3.version>3.12.0</commons-lang3.version>
         <commons-collections4.version>4.4</commons-collections4.version>
@@ -43,6 +45,16 @@
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
                 <version>${spring-cloud.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-oauth2</artifactId>
+                <version>${spring-cloud-oauth2.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-security</artifactId>
+                <version>${spring-cloud-security.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.projectlombok</groupId>

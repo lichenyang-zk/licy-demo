@@ -1,6 +1,6 @@
-package cn.licy.demo.service.impl;
+package cn.xxx.licy.demo.service.impl;
 
-import cn.licy.demo.service.DemoService;
+import cn.xxx.licy.demo.service.DemoService;
 import org.springframework.stereotype.Service;
 
 /**

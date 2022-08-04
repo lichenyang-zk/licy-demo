@@ -1,4 +1,4 @@
-package cn.licy.security.service.impl;
+package cn.xxx.licy.security.service.impl;
 
 import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.userdetails.User;

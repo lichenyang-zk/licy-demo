@@ -1,4 +1,4 @@
-package cn.licy.demo.service;
+package cn.xxx.licy.demo.service;
 
 /**
  * DemoService

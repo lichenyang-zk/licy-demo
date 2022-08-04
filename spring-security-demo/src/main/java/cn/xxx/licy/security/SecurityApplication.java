@@ -1,4 +1,4 @@
-package cn.licy.security;
+package cn.xxx.licy.security;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

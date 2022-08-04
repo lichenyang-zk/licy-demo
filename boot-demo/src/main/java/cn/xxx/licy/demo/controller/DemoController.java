@@ -1,6 +1,6 @@
-package cn.licy.demo.controller;
+package cn.xxx.licy.demo.controller;
 
-import cn.licy.demo.service.DemoService;
+import cn.xxx.licy.demo.service.DemoService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 

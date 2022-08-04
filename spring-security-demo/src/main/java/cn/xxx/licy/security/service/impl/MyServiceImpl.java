@@ -1,6 +1,6 @@
-package cn.licy.security.service.impl;
+package cn.xxx.licy.security.service.impl;
 
-import cn.licy.security.service.MyService;
+import cn.xxx.licy.security.service.MyService;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

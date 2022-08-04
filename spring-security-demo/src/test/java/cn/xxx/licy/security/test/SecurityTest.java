@@ -1,4 +1,4 @@
-package cn.licy.security.test;
+package cn.xxx.licy.security.test;
 
 import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;

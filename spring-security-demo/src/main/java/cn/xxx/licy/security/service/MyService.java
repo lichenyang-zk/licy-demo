@@ -1,4 +1,4 @@
-package cn.licy.security.service;
+package cn.xxx.licy.security.service;
 
 import org.springframework.security.core.Authentication;
 
