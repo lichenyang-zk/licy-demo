@@ -1,6 +1,7 @@
 package com.xxx.licy.security.oauth2.config;
 
 import com.xxx.licy.security.oauth2.service.UserService;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -8,6 +9,8 @@ import org.springframework.security.oauth2.config.annotation.configurers.ClientD
 import org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerConfigurerAdapter;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer;
+import org.springframework.security.oauth2.provider.token.TokenStore;
+import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
 
 import javax.annotation.Resource;
 
@@ -30,6 +33,13 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
     @Resource
     private UserService userService;
 
+    @Resource
+    @Qualifier("jwtTokenStore")
+    private TokenStore tokenStore;
+
+    @Resource
+    private JwtAccessTokenConverter jwtAccessTokenConverter;
+
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
         clients.inMemory()
@@ -45,9 +55,17 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
                 .authorizedGrantTypes("authorization_code","password");
     }
 
+    /**
+     * 密码模式
+     *
+     * @param endpoints endpoints
+     */
     @Override
     public void configure(AuthorizationServerEndpointsConfigurer endpoints) {
         endpoints.authenticationManager(authenticationManager)
-                .userDetailsService(userService);
+                .userDetailsService(userService)
+                // accessToken转换成JwtToken
+                .tokenStore(tokenStore)
+                .accessTokenConverter(jwtAccessTokenConverter);
     }
 }
