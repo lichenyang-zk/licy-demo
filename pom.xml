@@ -13,6 +13,7 @@
         <module>spring-security-demo</module>
         <module>spring-security-oauth2-demo</module>
         <module>jjwt-demo</module>
+        <module>oauth2-client01-demo</module>
     </modules>
 
     <properties>
