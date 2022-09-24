@@ -1,5 +1,9 @@
 package com.xxx.licy.demo.service;
 
+import com.xxx.licy.demo.model.User;
+
+import java.util.List;
+
 /**
  * DemoService
  *
@@ -14,4 +18,11 @@ public interface DemoService {
      * @return Hello World！
      */
     String hello();
+
+    /**
+     * 获取学生列表
+     *
+     * @return 学生列表
+     */
+    List<User> getUsers();
 }
