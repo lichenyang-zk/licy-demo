@@ -29,7 +29,7 @@ export default class Search extends Component {
     render() {
         return (
             <div>
-                <span>搜索GitHub用户</span><br />
+                <span>4、搜索GitHub用户</span><br />
                 <input ref={c => this.keyWordElement = c} type="text" placeholder='请输入关键词' />&nbsp;
                 <button onClick={this.search}>搜索</button>
             </div>

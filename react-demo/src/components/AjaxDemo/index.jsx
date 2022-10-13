@@ -20,6 +20,7 @@ export default class AjaxDemo extends Component {
   render() {
     return (
       <div>
+        <span>3、AjaxDemo</span><br />
         <button onClick={this.getUser}>获取用户信息</button>
         <span>&nbsp;通过控制台查看获取的用户信息</span>
       </div>
