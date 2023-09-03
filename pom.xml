@@ -15,6 +15,9 @@
         <module>jjwt-demo</module>
         <module>oauth2-client01-demo</module>
         <module>spring5-demo</module>
+        <module>multi-datasource-cloud-demo</module>
+        <module>gateway-demo</module>
+        <module>spring-cloud-demo</module>
     </modules>
 
     <properties>
@@ -25,6 +28,7 @@
 
         <spring-boot.version>2.3.12.RELEASE</spring-boot.version>
         <spring-cloud.version>Hoxton.SR12</spring-cloud.version>
+        <spring-cloud-alibaba.version>2.2.5.RELEASE</spring-cloud-alibaba.version>
         <spring-cloud-oauth2.version>2.2.5.RELEASE</spring-cloud-oauth2.version>
         <spring-cloud-security.version>2.2.5.RELEASE</spring-cloud-security.version>
         <lombok.version>1.18.24</lombok.version>
