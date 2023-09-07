@@ -27,7 +27,7 @@
         <maven.compiler.target>${java.version}</maven.compiler.target>
 
         <spring-boot.version>2.3.12.RELEASE</spring-boot.version>
-        <spring-cloud.version>Hoxton.SR12</spring-cloud.version>
+        <spring-cloud.version>Hoxton.SR11</spring-cloud.version>
         <spring-cloud-alibaba.version>2.2.5.RELEASE</spring-cloud-alibaba.version>
         <spring-cloud-oauth2.version>2.2.5.RELEASE</spring-cloud-oauth2.version>
         <spring-cloud-security.version>2.2.5.RELEASE</spring-cloud-security.version>
@@ -53,6 +53,15 @@
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
                 <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring-cloud-alibaba.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>org.springframework.cloud</groupId>

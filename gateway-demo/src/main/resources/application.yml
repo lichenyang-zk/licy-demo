@@ -14,4 +14,10 @@ spring:
         - id: cloud-demo
           uri: lb://cloud-demo
           predicates:
-            - Path=/hello/**
+            - Path=/cloud-demo/**
+          filters:
+            - StripPrefix=1
+
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
