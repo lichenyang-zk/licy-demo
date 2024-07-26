@@ -1,4 +1,4 @@
-package com.xxx.licy.order.demo.service;
+package com.xxx.licy.order.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

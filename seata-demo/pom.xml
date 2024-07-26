@@ -17,5 +17,12 @@
         <module>user-demo</module>
     </modules>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.xxx.licy</groupId>
+            <artifactId>common-demo</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 
 </project>
