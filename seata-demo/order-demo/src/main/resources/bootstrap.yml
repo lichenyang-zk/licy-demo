@@ -1,0 +1,16 @@
+server:
+  port: 9991
+
+spring:
+  application:
+    name: order-server
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+        namespace: licy-test
+  datasource:
+    username: root
+    password: licy@123
+    url: jdbc:mysql://localhost:3306/test?useSSL=false&serverTimezone=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver
