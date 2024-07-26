@@ -15,9 +15,10 @@
         <module>jjwt-demo</module>
         <module>oauth2-client01-demo</module>
         <module>spring5-demo</module>
-        <module>multi-datasource-cloud-demo</module>
         <module>gateway-demo</module>
         <module>spring-cloud-demo</module>
+        <module>seata-demo</module>
+        <module>common-demo</module>
     </modules>
 
     <properties>
