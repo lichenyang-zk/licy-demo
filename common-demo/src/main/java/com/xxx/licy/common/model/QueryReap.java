@@ -35,8 +35,8 @@ public class QueryReap<T> extends ServiceResp {
         this.resultList = resultList;
     }
 
-    public static QueryReap<String> getServiceFallback() {
-        QueryReap<String> queryReap = new QueryReap<>();
+    public static <T> QueryReap<T> getServiceFallback(Class<T> tClass) {
+        QueryReap<T> queryReap = new QueryReap<>();
         queryReap.setServiceRespStatus(RespStatus.SERVICE_FALLBACK);
         return queryReap;
     }

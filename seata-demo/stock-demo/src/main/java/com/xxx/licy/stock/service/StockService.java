@@ -1,5 +1,6 @@
 package com.xxx.licy.stock.service;
 
+import com.xxx.licy.common.model.QueryReap;
 import com.xxx.licy.common.model.ServiceResp;
 import com.xxx.licy.stock.model.Stock;
 
@@ -10,6 +11,14 @@ import com.xxx.licy.stock.model.Stock;
  * @since 2024/7/26 16:30
  */
 public interface StockService {
+
+    /**
+     * 根据productId查询库存
+     *
+     * @param productId 产品ID
+     * @return 库存信息
+     */
+    QueryReap<Stock> getByProductId(Integer productId);
 
     /**
      * 更新库存

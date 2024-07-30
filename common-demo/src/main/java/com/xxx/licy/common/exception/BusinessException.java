@@ -23,7 +23,7 @@ public class BusinessException extends RuntimeException {
     }
 
     public BusinessException(RespStatus status, Objects... args) {
-        this(status.getCode(), String.format(status.getMessage(), args));
+        this(status.getCode(), String.format(status.getMessage(), (Object) args));
     }
 
     public BusinessException(int code, String message) {

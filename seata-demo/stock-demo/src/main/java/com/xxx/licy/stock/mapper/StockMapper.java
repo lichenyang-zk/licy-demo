@@ -21,4 +21,6 @@ public interface StockMapper {
     int updateByPrimaryKeySelective(Stock record);
 
     int updateByPrimaryKey(Stock record);
+
+    Stock getByProductId(Integer productId);
 }

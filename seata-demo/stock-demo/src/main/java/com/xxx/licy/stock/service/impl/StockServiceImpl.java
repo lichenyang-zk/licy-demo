@@ -2,6 +2,7 @@ package com.xxx.licy.stock.service.impl;
 
 import com.xxx.licy.common.constant.RespStatus;
 import com.xxx.licy.common.exception.BusinessException;
+import com.xxx.licy.common.model.QueryReap;
 import com.xxx.licy.common.model.ServiceResp;
 import com.xxx.licy.stock.mapper.StockMapper;
 import com.xxx.licy.stock.model.Stock;
@@ -19,6 +20,11 @@ public class StockServiceImpl implements StockService {
 
     @Resource
     private StockMapper stockMapper;
+
+    @Override
+    public QueryReap<Stock> getByProductId(Integer productId) {
+        return new QueryReap<>(stockMapper.getByProductId(productId));
+    }
 
     @Override
     public ServiceResp update(Stock stock) {

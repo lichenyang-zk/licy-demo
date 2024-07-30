@@ -1,6 +1,7 @@
 package com.xxx.licy.stock.model;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * 库存
@@ -9,6 +10,7 @@ import lombok.Data;
  * @since 2024/7/29 16:02
  */
 @Data
+@NoArgsConstructor
 public class Stock {
     /**
      * 主键
@@ -29,4 +31,9 @@ public class Stock {
      * 商品价格
      */
     private Long money;
+
+    public Stock(Integer productId, Integer count) {
+        this.productId = productId;
+        this.count = count;
+    }
 }
