@@ -36,11 +36,11 @@
         <lombok.version>1.18.24</lombok.version>
         <commons-lang3.version>3.12.0</commons-lang3.version>
         <commons-collections4.version>4.4</commons-collections4.version>
-        <mybatis.version>2.2.2</mybatis.version>
+        <mybatis-spring.version>3.0.3</mybatis-spring.version>
         <mysql.version>8.4.0</mysql.version>
         <thymeleaf-extras.version>3.1.0.M1</thymeleaf-extras.version>
         <jjwt.version>0.9.1</jjwt.version>
-        <slf4j-api.version>1.7.36</slf4j-api.version>
+        <slf4j-api.version>2.0.13</slf4j-api.version>
         <logback-classic.version>1.4.12</logback-classic.version>
         <springsecurity5.version>3.1.1.RELEASE</springsecurity5.version>
         <javax.annotation-api.version>1.3.2</javax.annotation-api.version>
@@ -87,7 +87,7 @@
             <dependency>
                 <groupId>org.mybatis.spring.boot</groupId>
                 <artifactId>mybatis-spring-boot-starter</artifactId>
-                <version>${mybatis.version}</version>
+                <version>${mybatis-spring.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.thymeleaf.extras</groupId>

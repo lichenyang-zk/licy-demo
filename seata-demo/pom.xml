@@ -36,10 +36,6 @@
             <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
         <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-classic</artifactId>
-        </dependency>
-        <dependency>
             <groupId>javax.annotation</groupId>
             <artifactId>javax.annotation-api</artifactId>
         </dependency>
