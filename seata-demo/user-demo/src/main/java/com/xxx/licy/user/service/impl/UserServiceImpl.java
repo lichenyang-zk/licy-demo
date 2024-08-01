@@ -36,7 +36,7 @@ public class UserServiceImpl implements UserService {
         Stock stock = stockResp.getResultObject();
         // 减库存
         int newCount = stock.getCount() - count;
-        Stock updateStock = new Stock(1, newCount);
+        Stock updateStock = new Stock(stock.getId(), 1, newCount);
         stockClient.update(updateStock);
         return new ServiceResp();
     }

@@ -22,7 +22,7 @@ public class StockController {
     private StockService stockService;
 
     @GetMapping("/getByProductId")
-    QueryReap<Stock> getByProductId(Integer productId) {
+    QueryReap<Stock> getByProductId(@RequestParam("productId") Integer productId) {
         return stockService.getByProductId(productId);
     }
 

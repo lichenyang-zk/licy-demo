@@ -11,6 +11,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  * 库存客户端
@@ -22,7 +23,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 public interface StockClient {
 
     @GetMapping("/getByProductId")
-    QueryReap<Stock> getByProductId(Integer productId);
+    QueryReap<Stock> getByProductId(@RequestParam("productId") Integer productId);
 
     @PostMapping("/update")
     ServiceResp update(@RequestBody Stock stock);

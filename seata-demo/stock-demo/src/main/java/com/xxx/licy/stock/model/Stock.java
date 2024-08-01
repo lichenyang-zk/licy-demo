@@ -32,7 +32,8 @@ public class Stock {
      */
     private Long money;
 
-    public Stock(Integer productId, Integer count) {
+    public Stock(Integer id, Integer productId, Integer count) {
+        this.id = id;
         this.productId = productId;
         this.count = count;
     }
