@@ -1,11 +1,11 @@
 package com.xxx.licy.security.handler;
 
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.authentication.AuthenticationFailureHandler;
 
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
@@ -26,9 +26,9 @@ public class MyAuthenticationFailureHandler implements AuthenticationFailureHand
     }
 
     @Override
-    public void onAuthenticationFailure(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, AuthenticationException e) throws IOException, ServletException {
+    public void onAuthenticationFailure(HttpServletRequest request, HttpServletResponse response, AuthenticationException exception) throws IOException, ServletException {
         // 打印异常信息
-        System.out.println("登录失败：" + e.getMessage());
-        httpServletResponse.sendRedirect(loginFailureUrl);
+        System.out.println("登录失败：" + exception.getMessage());
+        response.sendRedirect(loginFailureUrl);
     }
 }

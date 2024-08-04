@@ -30,6 +30,6 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         }
         // 密码比较，若匹配成功则返回UserDetails，这里为模拟不比较，直接返回
         String password = passwordEncoder.encode("123");
-        return new User(username,password, AuthorityUtils.commaSeparatedStringToAuthorityList("admin,normal,ROLE_abc,/main.html,/insert,/delete"));
+        return new User(username, password, AuthorityUtils.commaSeparatedStringToAuthorityList("admin,normal,ROLE_abc,/main.html,/insert,/delete"));
     }
 }

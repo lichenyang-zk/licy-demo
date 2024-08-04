@@ -1,11 +1,11 @@
 server:
-  port: 9993
+  port: 10086
 
 spring:
   application:
-    name: user-server
+    name: user-service
   cloud:
     nacos:
       discovery:
         server-addr: 127.0.0.1:8848
-        namespace: licy-test
+        namespace: licy-demo

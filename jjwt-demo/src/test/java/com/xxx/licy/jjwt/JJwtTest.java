@@ -1,13 +1,15 @@
 package com.xxx.licy.jjwt;
 
-import io.jsonwebtoken.JwtBuilder;
+import com.xxx.licy.jjwt.constanst.JwtClaimsConstant;
+import com.xxx.licy.jjwt.util.JwtUtils;
+import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.SignatureAlgorithm;
-import io.jsonwebtoken.impl.Base64Codec;
 import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import java.util.Date;
+import javax.crypto.SecretKey;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * JWT单元测试
@@ -23,29 +25,25 @@ public class JJwtTest {
      */
     @Test
     public void testJwt() {
-        JwtBuilder jwtBuilder = Jwts.builder()
-                // 唯一ID {"jti", "888"}
-                .setId("888")
-                // 接受的用户 {"sub", "Rose"}
-                .setSubject("Rose")
-                // 签发时间 {"iat", "时间"}
-                .setIssuedAt(new Date())
-                // 签名算法以及秘钥
-                .signWith(SignatureAlgorithm.HS256, "Rose");
+        String customKey = "7D0BB9B4C934433481C35FA0622BE7B947CED8DD00E7481F99353700FC480C6134BCD0F4C8264B6" +
+                "EB14E1932610777552D82E0FD331B4D528C3A35FA0743A390";
+        // 自定义密钥（自定义必须满足base64编码后字节长度>=256 bits）
+        // SecretKey customSecretKey = Keys.hmacShaKeyFor(Decoders.BASE64.decode(customKey));
+        // 生成密钥
+        SecretKey generateSecretKey = Jwts.SIG.HS256.key().build();
+        // 模拟登陆生成，返回给客户端
+        Map<String, Object> claims = new HashMap<>();
+        claims.put(JwtClaimsConstant.USER_ID, "001");
+        claims.put(JwtClaimsConstant.USERNAME, "licy");
+        String token = JwtUtils.createJwt(generateSecretKey, 1000, claims);
 
-        // 签发token
-        String token = jwtBuilder.compact();
         System.out.println("token = " + token);
 
         System.out.println("-----------------------------------------------");
 
-        String[] split = token.split("\\.");
-        String jwtHeader = split[0];
-        System.out.println("jwtHeader = " + Base64Codec.BASE64.decodeToString(jwtHeader));
-        String jwtPayload = split[1];
-        System.out.println("jwtPayload = " + Base64Codec.BASE64.decodeToString(jwtPayload));
-        // 会乱码
-        String jwtSignature = split[2];
-        System.out.println("jwtSignature = " + Base64Codec.BASE64.decodeToString(jwtSignature));
+        // 需要创建一个jwt拦截器，注册到WebMvcConfiguration配置类中
+        Claims claims01 = JwtUtils.parseJWT(generateSecretKey, token);
+        // claims就是在Payload中存放的用户信息
+        System.out.println(JwtClaimsConstant.USERNAME + " = " + claims01.get(JwtClaimsConstant.USERNAME));
     }
 }

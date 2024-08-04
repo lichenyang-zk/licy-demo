@@ -1,0 +1,10 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: jjwt-server
+
+jwt:
+  is-custom-key: false
+  custom-secret-key: EB14E1932610777552D82E0FD331B4D528C3A35FA0743A3907D0BB9B4C934433481C35FA0622BE7B947CED8DD00E7481F

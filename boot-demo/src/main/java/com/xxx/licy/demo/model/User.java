@@ -1,19 +1,15 @@
 package com.xxx.licy.demo.model;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 /**
  * @author lichenyang
  * @since 2022/9/14 17:24
  */
+@Data
+@NoArgsConstructor
 public class User {
-
-    public User() {
-    }
-
-    public User(String name, String sex, Integer age) {
-        this.name = name;
-        this.sex = sex;
-        this.age = age;
-    }
 
     /**
      * 用户ID
@@ -35,44 +31,14 @@ public class User {
      */
     private Integer age;
 
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
+    public User(String name, String sex, Integer age) {
         this.name = name;
-    }
-
-    public String getSex() {
-        return sex;
-    }
-
-    public void setSex(String sex) {
         this.sex = sex;
-    }
-
-    public Integer getAge() {
-        return age;
-    }
-
-    public void setAge(Integer age) {
         this.age = age;
     }
 
     @Override
     public String toString() {
-        return "Student{" +
-                "name='" + name + '\'' +
-                ", sex='" + sex + '\'' +
-                ", age=" + age +
-                '}';
+        return "Student{" + "name='" + name + '\'' + ", sex='" + sex + '\'' + ", age=" + age + '}';
     }
 }

@@ -1,7 +1,7 @@
 package com.xxx.licy;
 
 import org.springframework.boot.SpringApplication;
-import org.springframework.cloud.client.SpringCloudApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 /**
@@ -10,7 +10,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
  * @author lichenyang
  * @since 2023/9/3 16:10
  */
-@SpringCloudApplication
+@SpringBootApplication
 @EnableDiscoveryClient
 public class CloudApplication {
 

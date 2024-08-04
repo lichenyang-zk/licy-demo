@@ -40,7 +40,7 @@ public class SecurityController {
 
     @GetMapping("/demo")
     // @ResponseBody
-    public String demo(){
+    public String demo() {
         return "demo";
     }
 }

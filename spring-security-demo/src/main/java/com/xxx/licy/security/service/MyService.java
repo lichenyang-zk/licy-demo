@@ -1,8 +1,7 @@
 package com.xxx.licy.security.service;
 
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.security.core.Authentication;
-
-import javax.servlet.http.HttpServletRequest;
 
 /**
  * 自定义权限控制接口

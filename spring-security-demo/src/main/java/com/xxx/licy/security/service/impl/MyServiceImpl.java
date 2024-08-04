@@ -1,13 +1,13 @@
 package com.xxx.licy.security.service.impl;
 
 import com.xxx.licy.security.service.MyService;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
-import javax.servlet.http.HttpServletRequest;
 import java.util.Collection;
 
 /**
@@ -24,8 +24,7 @@ public class MyServiceImpl implements MyService {
         // 获取主体
         Object principal = authentication.getPrincipal();
         // 判断主体是否属于UserDetails
-        if (principal instanceof UserDetails) {
-            UserDetails userDetails = (UserDetails) principal;
+        if (principal instanceof UserDetails userDetails) {
             // 获取权限
             Collection<? extends GrantedAuthority> authorities = userDetails.getAuthorities();
             // 判断请求的URI是否在权限列表里

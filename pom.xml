@@ -17,6 +17,7 @@
         <module>spring5-demo</module>
         <module>gateway-demo</module>
         <module>spring-cloud-demo</module>
+        <module>multi-datasource-cloud-demo</module>
         <module>seata-demo</module>
         <module>common-demo</module>
     </modules>
@@ -39,7 +40,7 @@
         <mybatis-spring.version>3.0.3</mybatis-spring.version>
         <mysql.version>8.4.0</mysql.version>
         <thymeleaf-extras.version>3.1.0.M1</thymeleaf-extras.version>
-        <jjwt.version>0.9.1</jjwt.version>
+        <jjwt.version>0.12.6</jjwt.version>
         <slf4j-api.version>2.0.13</slf4j-api.version>
         <logback-classic.version>1.4.12</logback-classic.version>
         <springsecurity5.version>3.1.1.RELEASE</springsecurity5.version>

@@ -3,12 +3,12 @@ server:
 
 spring:
   application:
-    name: cloud-demo
+    name: cloud-server
   cloud:
     nacos:
       discovery:
         server-addr: 127.0.0.1:8848
-        namespace: licy-demo
-    circuitbreaker:
+        namespace: licy-test
+    circuit breaker:
       hystrix:
         enabled: true
