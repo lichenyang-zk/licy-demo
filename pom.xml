@@ -17,9 +17,10 @@
         <module>spring5-demo</module>
         <module>gateway-demo</module>
         <module>spring-cloud-demo</module>
-        <module>multi-datasource-cloud-demo</module>
+<!--        <module>multi-datasource-cloud-demo</module>-->
         <module>seata-demo</module>
         <module>common-demo</module>
+        <module>excel-demo</module>
     </modules>
 
     <properties>
